@@ -304,7 +304,20 @@ const moarNumbers = [
 ];
 
 export default Controller.extend({
-  options: moarNumbers
+  options: moarNumbers,
+  customScrollTo(highlighted, select) {
+    let index = select.results.indexOf(highlighted);
+    let optionsElement = document.getElementById(`ember-power-select-options-${select.uniqueId}`);
+    let { height } = optionsElement.getBoundingClientRect();
+    let currentScrollY = optionsElement.scrollTop;
+    let topOfOption = index * 28;
+    let bottomOfOption = topOfOption + 28;
+    if (bottomOfOption > currentScrollY + height) {
+      optionsElement.scrollTop = bottomOfOption - height;
+    } else if (topOfOption < currentScrollY) {
+      optionsElement.scrollTop = topOfOption;
+    }
+  }
 })
 
 

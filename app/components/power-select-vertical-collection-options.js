@@ -1,0 +1,1 @@
+export { default } from 'ember-power-select-collection/components/power-select-vertical-collection-options';

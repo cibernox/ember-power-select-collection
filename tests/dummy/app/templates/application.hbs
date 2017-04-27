@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div style="display: flex; min-height: 100vh; width: 900px; justify-content: space-between;">
+  <div style="min-width: 400px">
+    <h3>Normal</h3>
+    {{#power-select options=options selected=selected onchange=(action (mut selected)) as |opt|}}
+      {{opt}}
+    {{/power-select}}
+  </div>
+  <div style="min-width: 400px">
+    <h3>With vertical collection</h3>
+    {{#power-select options=options selected=selected onchange=(action (mut selected)) optionsComponent="power-select-vertical-collection-options" as |opt|}}
+      {{opt}}
+    {{/power-select}}
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<div style="display: flex; min-height: 100vh; width: 900px; justify-content: space-between;">
+<div style="display: flex; min-height: 800px; width: 900px; justify-content: space-between;">
   <div style="min-width: 400px">
     <h3>Normal</h3>
     {{#power-select options=options selected=selected onchange=(action (mut selected)) as |opt|}}
@@ -11,11 +11,8 @@
       {{opt}}
     {{/power-select}}
   </div>
-  <br>
-  <br>
-  <br>
-  <ul>
-    <li>When the component opens the list must scroll to the selected element. In the vertical-collection the element is not there so it doesn't scroll</li>
-    <li>Similar problem when using the arrow keys to navigate options</li>
-  </ul>
 </div>
+<ul>
+  <li>When the component opens the list must scroll to the selected element. In the vertical-collection the element is not there so it doesn't scroll</li>
+  <li>Similar problem when using the arrow keys to navigate options</li>
+</ul>
